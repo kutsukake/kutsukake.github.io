@@ -13,4 +13,4 @@ $(function(){
     $('#ball').on('touched',function(){
         $('#touchResult li').eq(2).text('touchedしたよ');
     });
-})
+});
