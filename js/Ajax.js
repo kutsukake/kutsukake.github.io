@@ -12,12 +12,19 @@ $('#btn').on('click',function(){
         dateType:'html'
     }).done(function(date){
         console.log(date);
+
+        showContent(data);
+
     }).fale(function(){
+        //失敗
         console.log('ajax error');
-    });
-
-
+     });
 
     });
+
+    //表示させる関数
+    function showContent(data){
+        $('#container').append(data);
+    }
 
 });
