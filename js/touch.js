@@ -10,7 +10,7 @@ $(function(){
         $('#touchResult li').eq(1).text('touchmoveしたよ');
     });
 
-    $('#ball').on('touched',function(){
-        $('#touchResult li').eq(2).text('touchedしたよ');
+    $('#ball').on('touchend',function(){
+        $('#touchResult li').eq(2).text('touchendしたよ');
     });
 });
