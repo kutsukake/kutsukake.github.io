@@ -7,7 +7,7 @@ var lat;
 //GPS
 navigator.geolocation.getCurrentPosition(function(evt){
     //緯度
-    var lon =evt.cords.longitude;
+    var lon =evt.coords.longitude;
     //経度
     var lat = evt.coords.latitude;
 },
