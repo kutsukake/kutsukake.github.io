@@ -15,7 +15,7 @@ $('#btn').on('click',function(){
 
         showContent(data);
 
-    }).fale(function(){
+    }).fail(function(){
         //失敗
         console.log('ajax error');
      });
@@ -28,3 +28,7 @@ $('#btn').on('click',function(){
     }
 
 });
+
+for(var cnt =0; cnt < data.length; cnt++){
+    $('#container li').eq(cnt).text(data[cnt].name);
+}
