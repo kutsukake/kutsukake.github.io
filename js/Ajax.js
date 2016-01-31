@@ -7,13 +7,13 @@ $('#btn').on('click',function(){
 
     //Ajaxでロード
     $.ajax({
-        url:'omikuji.html',
+        url:'mydata.json',
         type:'GET',
         dateType:'html'
-    }).done(function(date){
-        console.log(date);
+    }).done(function(data){
+        console.log(data);
 
-        showContent(data);
+        // showContent(data);
 
     }).fale(function(){
         //失敗
