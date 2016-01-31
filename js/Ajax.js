@@ -9,11 +9,11 @@ $('#btn').on('click',function(){
     $.ajax({
         url:'mydata.json',
         type:'GET',
-        dateType:'html'
+        dateType:'json'
     }).done(function(data){
         console.log(data);
 
-        // showContent(data);
+        showContent(data);
 
     }).fale(function(){
         //失敗
