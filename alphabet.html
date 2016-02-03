@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1334, user-scalable=0">
+  <title>FM Synthesizer</title>
+  <link rel="stylesheet" href="css/co02.css">
+
+
+</head>
+<body>
+  <script src="js/p5.js"></script>
+  <script src="js/p5.dom.js"></script>
+  <script src="js/p5.sound.js"></script>
+  <script src="js/alphabet.js"></script>
+   <script src="js/number.js"></script>
+  <script>
+
+
+//入力ボタン
+// var numBtn;
+var btnArr =[];//入力ボタンの配列
+//シーケンサー用配列
+var sqArr =[];
+
+// var coloSampl = [
+//     {'#f73d95'},
+//     {'#5b3bea'},
+//     {'#38cfdd'},
+//     {'#378fff'},
+//     {'#fa7b25'},
+//     {'#ebfb39'}
+//
+// ];
+
+//色のサンプル
+// #f73d95 (247,61,149)pink
+// #5b3bea (91,59,234)perple
+//#38cfdd(56,207,221)skyblue
+//#378fff(55,143,255)blue
+//#fa7b25(350,123,37)orenge
+//#ebfb39(235,251,57)yellow
+
+// var alphabet = [
+//   {x:40, y:530},
+//   {x:80, y:460},
+//   {x:120, y:390},
+//   {x:160, y:320},
+//   {x:200, y:250},
+//   {x:240, y:180},
+//   {x:280, y:110},
+//   {x:320, y:40},//top
+//   {x:360, y:110},
+//   {x:400, y:180},
+//   {x:440, y:250},
+//   {x:480, y:320},
+//   {x:520, y:390},
+//   {x:560, y:460},
+//   {x:600, y:530},
+//   {x:200, y:390},//真ん中
+//   {x:280, y:390},//真ん中
+//   {x:360, y:390},//真ん中
+//   {x:440, y:390},//真ん中
+// ];
+
+for(var i=0; i<alphabet.k.length; i++){
+    sqArr[i] = 0;
+}
+
+console.log(sqArr);
+//シーケンサーの配列の数
+var sqCount = alphabet.k.length;
+//ループカウント
+var loopCount=0;
+
+var A1;
+
+function preload(){
+    A1=loadSound('audio/casio/A1.mp3');
+    A2=loadSound('audio/casio/A2.mp3');
+}
+
+// var num=0;
+
+//初期設定
+function setup(){
+    console.log('co01読み込み');
+    createCanvas(windowWidth,windowHeight);
+    background(0);
+
+    //ボリュームの設定
+   A1.setVolume(0.5);
+
+    //入力ボタンの生成
+    for(var i=0; i<alphabet.k.length; i++){
+        btnArr[i] =createDiv(i);
+        btnArr[i].id(i);//ボタンにidを設定
+        btnArr[i].class('btn');
+        btnArr[i].position(alphabet.k[i].x-40, alphabet.k[i].y-20);//ボタンの位置
+        btnArr[i].mousePressed(function(){
+            //ボタンを押したときのイベント
+            console.log(this.elt.id);
+            changeInput(this.elt.id);
+        });
+    }
+
+    // numBtn.position(250,20);
+    // numBtn.mousePressed(function(){
+    //     changeInput();
+    // });
+}
+//ボタンの値
+function changeInput(id){
+    console.log(id+'番押されました');
+    if(sqArr[id]==0){
+        sqArr[id] =1 ;
+    }else{
+        sqArr[id] = 0;
+    }
+}
+
+
+function draw(){
+
+    frameRate(60*4/60);
+    // background(255);
+    // push();
+    // scale(0.5,0.5);
+
+    for(var i=0; i<alphabet.k.length; i++){
+        noStroke();//線なし
+
+        if(sqArr[i] == 0){
+            fill(255);//塗りグレー
+        }else{
+            fill(247, 59, 234);//塗りはピンク
+// var color = '#' + ("00000"+Math.floor(Math.random() * 0x1000000).toString(16)).substr(-6);
+
+        // var randNum = colorSampl[Math.floor(Math.random()*colorSampl.length)];
+        }
+        //ループカウントの色
+        if(i == loopCount){
+            fill('#ebfb39');
+        }
+        ellipse(alphabet.k[i].x, alphabet.k[i].y, 80, 80);
+
+    }
+    // pop();
+
+    if(sqArr[loopCount] !==0){
+        console.log('play');
+        A2.play();
+    }
+
+    loopCount++;
+
+    if(loopCount >= sqCount){
+        loopCount=0;//ループカウンターを0に戻す
+
+    }
+}
+
+</script>
+
+
+
+
+  </script>
+
+</body>
+</html>
