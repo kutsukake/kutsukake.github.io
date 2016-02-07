@@ -76,12 +76,14 @@ function showVege(){
         iron.gotoAndPlay('stand');
     }
     //ステージの更新
-    stage.update();
+
 
     var spot = new createjs.Bitmap(manifest[3].src);
     tomato.x = 0;
     tomato.y = 0;
     stage.addChild(spot);
+
+    stage.update();
 
 }
 
