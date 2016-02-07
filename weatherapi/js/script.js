@@ -31,8 +31,13 @@ $(function(){
             //地域名
             var areaName = data.name;
             $('#areaName').text(areaName);
-        }
 
+
+        var areaTemp =data.main.temp;//華氏
+        areaTemp = areaTemp - 273.15;
+        $(#areaTemp).text(Math.round(areaTemp) +'度');
+
+        }
 
     });
 });
