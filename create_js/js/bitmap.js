@@ -24,7 +24,7 @@ loadQueue.loadManifest(manifest);//読み込み開始
     });
 
 function showVege(){
-    var tomoto = new createjs.Bitmap(manifest[0].src);
+    var tomato = new createjs.Bitmap(manifest[0].src);
     tomato.x = 100;
     tomato.y = 100;
     stage.addChild(tomato);
