@@ -2,8 +2,8 @@
 var manifest = [
     {src:'img/calcium.png'},
     {src:'img/iron.png'},
-    {src:'img/vitaminC.png'}
-    // {src:'img/header.png'}
+    {src:'img/vitaminC.png'},
+    {src:'img/header.png'}
 
 ];
 
@@ -78,10 +78,10 @@ function showVege(){
     //ステージの更新
 
 
-    // var spot = new createjs.Bitmap(manifest[3].src);
-    // tomato.x = 0;
-    // tomato.y = 0;
-    // stage.addChild(spot);
+    var spot = new createjs.Bitmap(manifest[3].src);
+    tomato.x = 0;
+    tomato.y = 0;
+    stage.addChild(spot);
 
     stage.update();
 
