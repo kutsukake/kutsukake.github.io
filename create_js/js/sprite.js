@@ -36,7 +36,7 @@ function showVege(){
 
     //スプライトの設定
     var vitaminC = new createjs.Sprite(vcSprite,'stand');
-    stage.addChaild(vitaminC);
+    stage.addChild(vitaminC);
 
     vitaminC.x = 150;
     vitaminC.y = 480;
