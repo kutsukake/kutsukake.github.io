@@ -44,6 +44,7 @@ function showVege(){
     //アニメーション
     createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).to({x:500},4000);
 
+    stage.update();
 
 }
 
