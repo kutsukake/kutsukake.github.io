@@ -38,10 +38,11 @@ function showVege(){
     var vitaminC = new createjs.Sprite(vcSprite,'stand');
     stage.addChild(vitaminC);
 
+    // 初期位置と透明度の設定
     vitaminC.x = 100;
     vitaminC.y = 200;
     vitaminC.alpha = 0;
-    //アニメーション
+    //アニメーション  tweenjsから読み込んで透明度０から１になる。その後x座標の500まで歩いてビタミンcが止まる
     createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).call(vitaminCWalk).to({x:500},4000).call(vitaminCStand);
     // ビタミンCが歩く
     function vitaminCWalk(){
@@ -51,8 +52,32 @@ function showVege(){
     function vitaminCStand(){
         vitaminC.gotoAndPlay('stand');
     }
+    
 
+    var irSprite = new createjs.SpriteSheet(ironSprite);
+
+    //スプライトの設定
+    var iron = new createjs.Sprite(irSprite,'stand');
+    stage.addChild(iron);
+
+    // 初期位置と透明度の設定
+    iron.x = 100;
+    iron.y = 200;
+    iron.alpha = 0;
+    //アニメーション  tweenjsから読み込んで透明度０から１になる。その後x座標の500まで歩いてビタミンcが止まる
+    createjs.Tween.get(iron).to({alpha:1},500).wait(1000).call(ironWalk).to({x:600},4000).call(ironStand);
+    // ビタミンCが歩く
+    function vitaminCWalk(){
+        iron.gotoAndPlay('walk');
+    }
+    // ビタミンCが止まる
+    function vitaminCStand(){
+        iron.gotoAndPlay('stand');
+    }
+    //ステージの更新
     stage.update();
+
+
 
 }
 
