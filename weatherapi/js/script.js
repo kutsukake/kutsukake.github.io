@@ -27,6 +27,10 @@ $(function(){
 
         function showWeather(data){
             console.log(data);
+
+            //地域名
+            var areaName = data.name;
+            $('#areaName').text(areaName);
         }
 
 
