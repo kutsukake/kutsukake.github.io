@@ -16,3 +16,9 @@ var ironSprite = {
         walk:[0,33]
     }
 }
+
+var spot = {
+    images:['img/header.png'],
+    frames:{width:1024,height:255},
+
+}
