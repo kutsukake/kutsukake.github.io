@@ -39,7 +39,7 @@ function showVege(){
     stage.addChild(vitaminC);
 
     // 初期位置と透明度の設定
-    vitaminC.x = 300;
+    vitaminC.x = 100;
     vitaminC.y = 400;
     vitaminC.alpha = 0;
     //アニメーション  tweenjsから読み込んで透明度０から１になる。その後x座標の500まで歩いてビタミンcが止まる
