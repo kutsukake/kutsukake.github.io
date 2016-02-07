@@ -28,6 +28,8 @@ function showVege(){
     tomato.x = 100;
     tomato.y = 100;
     stage.addChild(tomato);
+
+    stage.update();
 }
 
 
