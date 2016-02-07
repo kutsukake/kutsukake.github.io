@@ -42,7 +42,7 @@ function showVege(){
     vitaminC.y = 480;
     vitaminC.alpha = 0;
     //アニメーション
-    createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).to({500},4000);
+    createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).to({x:500},4000);
 
 
 }
