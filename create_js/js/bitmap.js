@@ -15,19 +15,14 @@ $(function(){
     var stage = new createjs.Stage('canvasEl');
 
 //loadQueue ローディング
-var loadQueue = new createjs.loadQueue();
+var loadQueue = new createjs.LoadQueue();
 loadQueue.loadManifest(manifest);//読み込み開始
 
-loadQueue.addEventListener('complete',function(){
+    loadQueue.addEventListener('complete',function(){
     console.log('読み込み完了');
 
-});
-
-
-
-        //アニメーション
-        createjs.Tween.get(ball).to({alpha:1},1000).wait(1000).to({x:500},1000,createjs.Ease.bounceOut);
     });
+
 
 
     //フレームレート
