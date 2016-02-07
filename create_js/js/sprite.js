@@ -67,11 +67,11 @@ function showVege(){
     //アニメーション  tweenjsから読み込んで透明度０から１になる。その後x座標の500まで歩いてビタミンcが止まる
     createjs.Tween.get(iron).to({alpha:1},500).wait(1000).call(ironWalk).to({x:600},4000).call(ironStand);
     // ビタミンCが歩く
-    function vitaminCWalk(){
+    function ironWalk(){
         iron.gotoAndPlay('walk');
     }
     // ビタミンCが止まる
-    function vitaminCStand(){
+    function ironStand(){
         iron.gotoAndPlay('stand');
     }
     //ステージの更新
