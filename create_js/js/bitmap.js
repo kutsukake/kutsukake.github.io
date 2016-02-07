@@ -23,12 +23,18 @@ loadQueue.loadManifest(manifest);//読み込み開始
     showVege();
     });
 
+loadQueue.addEventListener('progress',function(evt){
+    console.log(evt.progress);//読み込み状況 0~1
+});
+
+
+
+
 function showVege(){
     var tomato = new createjs.Bitmap(manifest[0].src);
     tomato.x = 100;
     tomato.y = 100;
     stage.addChild(tomato);
-
 
 
     var pumpkin = new createjs.Bitmap(manifest[1].src);
