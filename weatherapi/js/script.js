@@ -18,7 +18,7 @@ $(function(){
             dataType:'json'
         }).done(function(data){
 
-
+            showWeather(data);
 
         }).fail(function(){
             console.log('ajax.error!!');
