@@ -19,6 +19,6 @@ var ironSprite = {
 
 var spot = {
     images:['img/header.png'],
-    frames:{width:1024,height:255},
+    frames:{width:1024,height:768}
 
 }
