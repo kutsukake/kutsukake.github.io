@@ -52,7 +52,7 @@ function showVege(){
     function vitaminCStand(){
         vitaminC.gotoAndPlay('stand');
     }
-    
+
 
     var irSprite = new createjs.SpriteSheet(ironSprite);
 
@@ -61,8 +61,8 @@ function showVege(){
     stage.addChild(iron);
 
     // 初期位置と透明度の設定
-    iron.x = 100;
-    iron.y = 200;
+    iron.x = 300;
+    iron.y = 400;
     iron.alpha = 0;
     //アニメーション  tweenjsから読み込んで透明度０から１になる。その後x座標の500まで歩いてビタミンcが止まる
     createjs.Tween.get(iron).to({alpha:1},500).wait(1000).call(ironWalk).to({x:600},4000).call(ironStand);
