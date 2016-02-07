@@ -38,8 +38,8 @@ function showVege(){
     var vitaminC = new createjs.Sprite(vcSprite,'stand');
     stage.addChild(vitaminC);
 
-    vitaminC.x = 150;
-    vitaminC.y = 480;
+    vitaminC.x = 100;
+    vitaminC.y = 200;
     vitaminC.alpha = 0;
     //アニメーション
     createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).call(vitaminCWalk).to({x:500},4000).call(vitaminCStand);
