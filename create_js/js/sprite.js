@@ -79,8 +79,8 @@ function showVege(){
 
 
     var spot = new createjs.Bitmap(manifest[3].src);
-    tomato.x = 0;
-    tomato.y = 0;
+    spot.x = 0;
+    spot.y = 0;
     stage.addChild(spot);
 
     stage.update();
