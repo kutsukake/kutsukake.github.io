@@ -2,7 +2,7 @@
 var manifest = [
     {src:'img/tomato.png'},
     {src:'img/pumpkin.png'},
-    {src:'img/greenPepper'}
+    {src:'img/hourensou.png'}
 
 ];
 
@@ -20,9 +20,15 @@ loadQueue.loadManifest(manifest);//読み込み開始
 
     loadQueue.addEventListener('complete',function(){
     console.log('読み込み完了');
-
+    showVege();
     });
 
+function showVege(){
+    var tomoto = new createjs.Bitmap(manifest[0]src);
+    tomato.x = 100;
+    tomato.y = 100;
+    stage.addChild(tomato);
+}
 
 
     //フレームレート
