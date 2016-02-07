@@ -42,7 +42,15 @@ function showVege(){
     vitaminC.y = 480;
     vitaminC.alpha = 0;
     //アニメーション
-    createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).to({x:500},4000);
+    createjs.Tween.get(vitaminC).to({alpha:1},500).wait(1000).call(vitaminCWalk).to({x:500},4000).call(vitaminCStand);
+    // ビタミンCが歩く
+    function vitaminCWalk(){
+        vitaminC.gotoAndPlay('walk');
+    }
+    // ビタミンCが止まる
+    function vitaminCStand(){
+        vitaminC.gotoAndPlay('stand');
+    }
 
     stage.update();
 
